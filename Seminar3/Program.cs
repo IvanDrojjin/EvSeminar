@@ -78,7 +78,7 @@ Console.WriteLine($" расстояние между точками [{x1}, {y1}]
 2 -> 1,4
  */
 
-Console.Write("Введи  целое  число N: ");
+Console.Write("\n Введи  целое  число N: ");
 int nN = Convert.ToInt32(Console.ReadLine());
 
 
@@ -150,7 +150,28 @@ bool isPoliAndr(int[] digits, int nL)
     return true;
 }
 
-Console.Write("Задача 21 ");
+
+bool isStringPoliAndr(string  str0)
+{
+    int nL = str0.Length;
+    char[] strAsChars = str0.ToCharArray();
+
+    if (nL > 0)
+    {
+        // bool res = false;
+        for (int i = 0; i < nL / 2; i++)
+        {
+            if (strAsChars[i] != strAsChars[nL - 1 - i])
+            {
+                return false;
+            }
+        }
+        return true;
+    } else { return false; }
+
+}
+
+Console.Write("\n Задача 21 ");
 Console.WriteLine("");
 int nL = 5;  // length of integer
 int myInt = promtI5();
@@ -167,7 +188,9 @@ for (int i = 0; i < nL; i++)
 
 Console.WriteLine($" {myInt}  полиандр : {isPoliAndr(digits, 5)}");
 
-
+Console.Write( $"\n Введите строку :");
+string str1 = Console.ReadLine();
+Console.WriteLine($" {str1}  полиандр : {isStringPoliAndr(str1)}");
 
 /*
 Задача 21
@@ -192,7 +215,7 @@ double dist3(double x1, double y1, double z1, double x2, double y2, double z2)
     return res;
 }
 
-Console.Write("Задача 21 ");
+Console.Write("\n \n Задача 21 ");
 Console.WriteLine("");
 
 double x21 = promtDbl("X1");
@@ -216,7 +239,7 @@ Console.WriteLine("");
 5 -> 1, 8, 27, 64, 125
 */
 
-Console.Write("Задача 23 ");
+Console.Write("\n \n Задача 23 ");
 Console.Write("Введи  целое  число N: ");
 int nN23 = Convert.ToInt32(Console.ReadLine());
 
