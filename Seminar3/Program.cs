@@ -249,3 +249,130 @@ for (int i = 1; i < nN+1; i++)
     Console.Write($" {i * i * i}, ");
 }
 Console.WriteLine("");
+
+
+/*
+Задача 24: Напишите программу, которая принимает на вход число (А) 
+и выдаёт сумму чисел от 1 до А.
+7 -> 28
+4 -> 10
+8 -> 36
+*/
+/*
+int Sum(int A)
+{
+    int sum = 0;
+    for(int i = 1; i <= A; i++)
+    {
+        sum+=i;// sum = sum + i
+    }
+    return sum;
+}
+
+System.Console.WriteLine("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int sum = Sum(number);
+Console.WriteLine($"Сумма от 1 до {number} = {sum}");
+*/
+
+Console.Write("\n \n Задача 24 ");
+Console.Write("Введи  целое  число N: ");
+int nN24 = Convert.ToInt32(Console.ReadLine());
+int summ = 0;
+
+
+for (int i = 1; i < nN24; i++)
+{
+    summ += i;    
+}
+
+Console.Write($" {nN24} (СУММА) ->  {summ}");
+
+
+/*
+Задача 26: Напишите программу, которая принимает на вход число и 
+выдаёт количество цифр в числе.
+456 -> 3
+78 -> 2
+89126 -> 5
+
+char[0] == '-'     // char 
+int.TryParse (str out int number); // bool
+*/
+
+int CountDigit(int nN)
+{
+    int cN = 0;
+    int ni = Math.Abs(nN);
+    while (ni > 0)  // ==   !=   
+    {   
+        ni /= 10;
+        cN++;
+    }
+    return cN;
+}
+
+Console.Write("\n \n Задача 26 ");
+Console.Write("Введи  целое  число N: ");
+int nN26 = Convert.ToInt32(Console.ReadLine());
+int nDigit = 0;
+
+
+Console.Write($" {nN26} (число чисел) ->  {nDigit}");
+
+
+/*
+Задача 28: Напишите программу, которая принимает на вход число N и 
+выдаёт произведение чисел от 1 до N.
+4 -> 24 
+5 -> 120
+*/
+
+Console.Write("\n \n Задача 28 ");
+Console.Write("Введи  целое  число N: ");
+int nN28 = Convert.ToInt32(Console.ReadLine());
+int nMult = 1;
+for (int i = 1; i <= nN28; i++)
+{
+    nMult  *= i;
+}
+
+Console.Write($" {nN28} (произведение) ->  {nMult} \n \n ");
+
+
+/*
+Задача 30: Напишите программу, которая выводит массив из 8 элементов, 
+заполненный нулями и единицами в случайном порядке.
+[1,0,1,1,0,1,0,0]
+
+Random rnd = new Random();
+int month  = rnd.Next(1, 13);  
+*/
+
+Console.Write("\n \n Задача 30 \n\n");
+Random rnd = new Random();
+
+int[] arr30 = new int[8]; // int[] digits =  new int[nL]; 
+
+for (int i = 0; i < 8; i++ )
+{
+    arr30[i] = rnd.Next(0, 2);  
+    Console.Write($" {arr30[i]} , ");
+}
+Console.WriteLine($"\n\n [{string.Join(", ", arr30)}]");
+/*
+Товарищам из Зала 3  вот что мы успели: 
+https://github.com/aa-georgieva/--------4
+!! int --> long !!
+Math.Abs 
+
+Console.WriteLine($"[{string.Join(", ", array)}]");
+*/
+
+/*
+25, 27, 29 HomeWork
+
+int result = Convert.ToInt32(Math.Pow(number, degree)); а так нельзя первую?
+
+
+*/
